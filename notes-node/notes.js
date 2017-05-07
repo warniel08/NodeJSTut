@@ -27,6 +27,7 @@ var addNote = (title, body) => {
 		notes.push(note);
 		saveNotes(notes);
 		return note;
+		//this is whwere i stopped
 	}
 };
 
