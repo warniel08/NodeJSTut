@@ -46,6 +46,7 @@ var removeNote = (title) => {
 	// save new notes array
 	saveNotes(filteredNotes);
 
+	return notes.length !== filteredNotes.length;
 };
 
 module.exports = {
