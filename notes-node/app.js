@@ -20,7 +20,7 @@ if (command === 'add') {
 		console.log('Note title taken');
 	}
 } else if (command === 'list') {
-	notes.getAll();
+	var allNotes = notes.getAll();
 } else if (command === 'read') {
 	var note = notes.getNote(argv.title);
 	if (note) {
