@@ -1,3 +1,4 @@
+require('dotenv').config();
 const yargs = require('yargs');
 const axios = require('axios');
 
@@ -24,7 +25,7 @@ axios.get(geocodeURL).then((response) => {
 
 	var lat = response.data.results[0].geometry.location.lat;
 	var lng = response.data.results[0].geometry.location.lng;
-	var weatherURL = `https://api.darksky.net/forecast/35389068338d4cd61ec874e9271479b9/${lat},${lng}`;
+	var weatherURL = `https://api.darksky.net/forecast/${process.env.WEATHER_KEY}/${lat},${lng}`;
 	console.log(response.data.results[0].formatted_address);
 	return axios.get(weatherURL);
 }).then((response) => {
