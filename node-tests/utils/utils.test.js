@@ -21,6 +21,13 @@ it('should sqaure a number', () => {
 	expect(res).toBe(9).toBeA('number');
 });
 
+it('should async sqaure a number', (done) => {
+	utils.asyncSquare(9, (res) => {
+		expect(res).toBe(81).toBeA('number');
+		done();
+	});
+});
+
 // should verify that first and last names are set
 // assert it includes firstName and lastName with proper values
 it('should set firstName and lastName', () => {
