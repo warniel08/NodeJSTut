@@ -2,31 +2,37 @@ const expect = require('expect');
 
 const utils = require('./utils');
 
-it('should add two numbers', () => {
-	var res = utils.add(33, 11);
+describe('Utils', () => {
 
-	expect(res).toBe(44).toBeA('number');
-});
+	describe('#add', () => {
+		it('should add two numbers', () => {
+			var res = utils.add(33, 11);
 
-it('should async add two number', (done) => {
-	utils.asyncAdd(4, 3, (sum) => {
-		expect(sum).toBe(7).toBeA('number');
-		done();
+			expect(res).toBe(44).toBeA('number');
+		});
 	})
-})
-	
-it('should sqaure a number', () => {
-	var res = utils.square(3);
 
-	expect(res).toBe(9).toBeA('number');
-});
+	it('should async add two number', (done) => {
+		utils.asyncAdd(4, 3, (sum) => {
+			expect(sum).toBe(7).toBeA('number');
+			done();
+		})
+	})
+		
+	it('should sqaure a number', () => {
+		var res = utils.square(3);
 
-it('should async sqaure a number', (done) => {
-	utils.asyncSquare(9, (res) => {
-		expect(res).toBe(81).toBeA('number');
-		done();
+		expect(res).toBe(9).toBeA('number');
+	});
+
+	it('should async sqaure a number', (done) => {
+		utils.asyncSquare(9, (res) => {
+			expect(res).toBe(81).toBeA('number');
+			done();
+		});
 	});
 });
+
 
 // should verify that first and last names are set
 // assert it includes firstName and lastName with proper values
